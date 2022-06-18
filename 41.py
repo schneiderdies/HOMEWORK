@@ -1,18 +1,12 @@
-sent = input()
-x = sent.split()
-line = ''
-for word in x:
-    if word[0].islower() or word == x[0]:
-        line += word + ' '
-    elif word[0].isupper():
-        if word[-1] == '.':
-            line += 'NAME.'
-        elif word[-1] == ',':
-            line += 'NAME, '
-        elif word[-1] == '!':
-            line += 'NAME!'
-        elif word[-1] == '?':
-            line += 'NAME?'
+a = int(input('Введите положительное число: \n'))
+en = 0
+on = 0
+while a != 0:
+    if a % 10 != 0:
+        if (a % 10) % 2 == 0:
+            en += 1
         else:
-            line += 'NAME '
-print(line)
+            on += 1
+    a //= 10
+print('количество чётных цифр: ', en)
+print('количество нечётных цифр: ', on)
